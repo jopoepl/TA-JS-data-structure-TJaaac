@@ -115,8 +115,9 @@ for (let value of got.houses) {
 
 // 16. Push all names into a new array named `allPeople` and log the value array.
 var allPeople = [];
-for (let value of got.houses) {
-  allPeople.push(value.people)
+for (let house of got.houses) {
+  for (let people of house.people)
+  allPeople.push(people.name)
 } 
 
 // 17. Log the value and length of `allPeople` array created above
@@ -128,13 +129,12 @@ console.log(allPeople.length)
 // 18. Push all descriptions into an array named `allDescription`
 
 var allDescription = [];
-for (let value of got.houses[0].people) {
-    allDescription.push(value.description)
-  }
-  for (let value of got.houses[1].people) {
-    allDescription.push(value.description)
-  } 
 
+for (let house of got.houses) {
+  for (let people of house.people){
+    allDescription.push(people.description)
+  }
+} 
 
 
 // 19. Log the value and length `allDescription`
@@ -145,8 +145,8 @@ console.log(allDescription.length);
 
 // 20. Only the the description whose length is more than 30. (use .length property on string to get the length)
 
-for (let value of allDescription) {
-  if (value.length > 30) {
-    console.log(value)
+for (let description of allDescription) {
+  if (description.length > 30) {
+    console.log(description)
   } 
 }
